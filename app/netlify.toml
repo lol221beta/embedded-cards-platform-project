@@ -1,7 +1,4 @@
-[build]
-  base = "app"              # ← исправлено: не "frontend", а "app"
-  command = "npm run build"
-  publish = "app/.next"
-
-[build.environment]
-  NODE_VERSION = "20"
+[[redirects]]
+from = "*/"
+to = "/package.json"
+status = 200
