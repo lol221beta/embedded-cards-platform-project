@@ -1,7 +1,7 @@
 [build]
-  base = "frontend"          # ← путь к папке с package.json
+  base = "app"              # ← исправлено: не "frontend", а "app"
   command = "npm run build"
-  publish = "frontend/.next" # ← путь внутри base
+  publish = "app/.next"
 
 [build.environment]
   NODE_VERSION = "20"
