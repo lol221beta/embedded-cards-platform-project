@@ -1,26 +1,7 @@
-# netlify.toml
 [build]
+  base = "frontend"          # ← путь к папке с package.json
   command = "npm run build"
-  publish = ".next"
+  publish = "frontend/.next" # ← путь внутри base
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-# Перенаправление корня на документ по умолчанию
-[[redirects]]
-  from = "/"
-  to = "/docs/1"
-  status = 302
-
-# Защита API - запрещаем прямой доступ к API извне (опционально)
-[[redirects]]
-  from = "/api/*"
-  status = 200
-  force = false
-
-# Все остальные маршруты обрабатываются Next.js
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+[build.environment]
+  NODE_VERSION = "20"
