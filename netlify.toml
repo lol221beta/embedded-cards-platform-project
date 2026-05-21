@@ -1,4 +1,29 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_PUBLIC_SITE_URL = "https://your-site-name.netlify.app"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Перенаправление корня на документ по умолчанию
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/"
+  to = "/docs/1"
+  status = 302
+
+# Защита API - запрещаем прямой доступ к API извне (опционально)
+[[redirects]]
+  from = "/api/*"
+  status = 200
+  force = false
+
+# Все остальные маршруты обрабатываются Next.js
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
