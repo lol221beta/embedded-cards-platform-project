@@ -1,4 +1,0 @@
-[[redirects]]
-from = "*/"
-to = "/package.json"
-status = 200
